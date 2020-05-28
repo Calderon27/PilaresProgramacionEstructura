@@ -19,7 +19,19 @@ namespace PilaresProgramacionEstructura
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Hola: " + this.txtApellido.Text + " " + this.txtNombres.Text);
+            //estructuras secuenciales
+            string saludo = ""; //cadendas 
+            saludo = this.txtNombres.Text + " " + this.txtApellido.Text;
+            MessageBox.Show("Hola: " + saludo);
+
+            //estructuras repetitivas
+            string aux = "";
+            
+            for (int i = 0; i<=10; i++)
+            {
+                aux = aux + saludo + System.Environment.NewLine;
+            }
+            this.txtResultado.Text = aux;
         }
     }
 }
