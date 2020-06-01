@@ -64,5 +64,38 @@ namespace PilaresProgramacionEstructura
 
             return resul;
         }
-    }       
+      
+    
+    //paso de parametro por valor 
+
+        void ejemploPasoValor(int x)
+        {
+            x = x + 100;
+            MessageBox.Show("El nuevo valor de x: " + x.ToString());
+        }
+        void ejemploPasoReferencia(ref int a)
+        {
+            //la funcion recibe la variable original (direccion de memoria)
+            //cualquier cambio en esta variable se refleja en la oriinal
+            a = a + 100;
+            MessageBox.Show("El nuevo valor de x: " + a.ToString());
+        }
+
+        private void btnPasoValor_Click(object sender, EventArgs e)
+        {
+            int x = 5; int y = 200;
+            //erjemplo Paso Valor (x)
+            this.ejemploParametrosopcionale(x, y);
+            this.txtValor.Text = x.ToString();
+
+        }
+
+        //paso de parametros opcionales
+        void ejemploParametrosopcionale(int x, int y=10)
+        {
+            x = x + y;
+            MessageBox.Show("Parametro opcional: " + y.ToString());
+            MessageBox.Show("El nuevo valor de x: " + x.ToString());
+        }
+    }
 }
